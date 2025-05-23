@@ -1,0 +1,26 @@
+pertemuan ke 2 materi 3
+
+method 2 {void}
+prosedure (ga ngereturn) dan function(return)
+yg ngembaliin nilai
+
+gambaran objek=human
+
+static agar tidak usah memanggil ribet
+
+constructure istimewa
+
+
+MATERI 4
+
+ENKAPULASI = private
+Collection Type = 
+
+for each = perulangan khuss array
+
+
+
+Case Style	Digunakan untuk	Contoh
+camelCase	Variabel, method, objek	tampilkanData(), jumlahDosen
+PascalCase	Nama class	Mahasiswa, Dosen, Main
+UPPER_CASE	Konstanta (jika ada final)	MAX_VALUE, PI, FIRST_NAME
