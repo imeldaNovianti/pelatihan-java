@@ -18,7 +18,7 @@ Collection Type =
 
 for each = perulangan khuss array
 
-
+# biasakann
 
 Case Style	Digunakan untuk	Contoh
 camelCase	Variabel, method, objek	tampilkanData(), jumlahDosen
