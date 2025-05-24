@@ -144,7 +144,7 @@ public class CrudMahasiswa {
         int index = inputAngka() - 1;
 
         if (index < 0 || index >= daftarMahasiswa.size()) {
-            System.out.println(" Nomor tidak valid!");
+            System.out.println(" Nomor tidak valid!.");
             return;
         }
 
