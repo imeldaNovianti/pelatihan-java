@@ -140,7 +140,7 @@ public class CrudMahasiswa {
         }
 
         lihatMahasiswa();
-        System.out.print("Masukkan nomor mahasiswa yang ingin dihapus : ");
+        System.out.print("Masukkan nomor mahasiswa yangg ingin dihapus : ");
         int index = inputAngka() - 1;
 
         if (index < 0 || index >= daftarMahasiswa.size()) {
