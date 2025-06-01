@@ -1,9 +1,7 @@
-// Interface Drawable
 interface Drawable {
     void draw();
 }
 
-// Abstract class Shape
 abstract class Shape implements Drawable {
     protected String color;
 
@@ -11,11 +9,9 @@ abstract class Shape implements Drawable {
         this.color = color;
     }
 
-    // Method abstrak untuk menghitung luas
     abstract double area();
 }
 
-// Class Circle turunan dari Shape
 class Circle extends Shape {
     private double radius;
 
@@ -29,7 +25,6 @@ class Circle extends Shape {
         return Math.PI * radius * radius;
     }
 
-    // Overloading method area dengan parameter diameter
     public double area(double diameter) {
         double r = diameter / 2;
         return Math.PI * r * r;
@@ -41,7 +36,6 @@ class Circle extends Shape {
     }
 }
 
-// Class Square turunan dari Shape
 class Square extends Shape {
     private double side;
 
@@ -55,7 +49,6 @@ class Square extends Shape {
         return side * side;
     }
 
-    // Overloading method area dengan panjang dan lebar
     public double area(double panjang, double lebar) {
         return panjang * lebar;
     }
@@ -66,10 +59,8 @@ class Square extends Shape {
     }
 }
 
-// Kelas Main
 public class KuisEmpat {
     public static void main(String[] args) {
-        // Objek Circle
         Circle lingkaran = new Circle(7, "Merah");
         lingkaran.draw();
         System.out.println("Luas lingkaran: " + lingkaran.area());
@@ -77,7 +68,6 @@ public class KuisEmpat {
 
         System.out.println();
 
-        // Objek Square
         Square persegi = new Square(5, "Biru");
         persegi.draw();
         System.out.println("Luas persegi: " + persegi.area());
