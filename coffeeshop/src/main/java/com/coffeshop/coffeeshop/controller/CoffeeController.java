@@ -23,7 +23,7 @@ public class CoffeeController {
         return res;
     }
 
-    @PostMapping("/nyimpan")
+    @PostMapping("/save")
     public Map<String, Object> save(@RequestBody Coffee coffee) {
         Map<String, Object> res = new LinkedHashMap<>();
         Optional<Coffee> existing = coffeeRepository.findByCode(coffee.getCode());
