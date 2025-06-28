@@ -9,7 +9,7 @@ public class Book {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String name;
+    private String title;
 
     @ManyToOne
     @JoinColumn(name = "author_id")
@@ -21,8 +21,8 @@ public class Book {
 
     public Book() {}
 
-    public Book(String name, Author author, Category category) {
-        this.name = name;
+    public Book(String title, Author author, Category category) {
+        this.title = title;
         this.author = author;
         this.category = category;
     }
@@ -35,12 +35,12 @@ public class Book {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getTitle() {
+        return title;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public Author getAuthor() {

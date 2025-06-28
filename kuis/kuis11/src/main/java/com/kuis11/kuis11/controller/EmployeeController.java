@@ -6,6 +6,7 @@ import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.*;
+import org.springframework.data.domain.Sort;
 
 @RestController
 @RequestMapping("/employees")
@@ -73,5 +74,32 @@ public class EmployeeController {
             res.put("message", "Employee tidak ditemukan");
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(res);
         }
+    }
+
+    @GetMapping("/search/{name}")
+    public ResponseEntity<Map<String, Object>> searchByName(@PathVariable String name) {
+        Map<String, Object> res = new HashMap<>();
+        List<Employee> result = repo.findByNameContainingIgnoreCase(name);
+        res.put("data", result);
+        res.put("message", "Hasil pencarian employee berdasarkan nama");
+        return ResponseEntity.ok(res);
+    }
+
+    @GetMapping("/sort/asc")
+    public ResponseEntity<Map<String, Object>> sortByNameAsc() {
+        Map<String, Object> res = new HashMap<>();
+        List<Employee> result = repo.findAll(Sort.by("name").ascending());
+        res.put("data", result);
+        res.put("message", "Data employee diurutkan berdasarkan nama secara ASCENDING");
+        return ResponseEntity.ok(res);
+    }
+
+    @GetMapping("/sort/desc")
+    public ResponseEntity<Map<String, Object>> sortByNameDesc() {
+        Map<String, Object> res = new HashMap<>();
+        List<Employee> result = repo.findAll(Sort.by("name").descending());
+        res.put("data", result);
+        res.put("message", "Data employee diurutkan berdasarkan nama secara DESCENDING");
+        return ResponseEntity.ok(res);
     }
 }
